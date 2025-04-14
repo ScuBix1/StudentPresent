@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('q_r_tokens', function (Blueprint $table) {
             $table->id();
+            $table->string('token')->unique();
+            $table->foreignId('course_id')->constrained();
             $table->timestamps();
         });
     }
